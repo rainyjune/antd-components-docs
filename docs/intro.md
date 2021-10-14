@@ -2,34 +2,36 @@
 sidebar_position: 1
 ---
 
-# Tutorial Intro
+# Antd Components Intro
 
-Let's discover **Docusaurus in less than 5 minutes**.
+Let's discover **Antd Components in less than 5 minutes**.
+
+Antd Components is a UI library based on [Ant Design](https://ant.design/).
 
 ## Getting Started
 
-Get started by **creating a new site**.
-
-Or **try Docusaurus immediately** with **[docusaurus.new](https://docusaurus.new)**.
-
-## Generate a new site
-
-Generate a new Docusaurus site using the **classic template**:
+Get started by installing it via npm:
 
 ```shell
-npx @docusaurus/init@latest init my-website classic
+npm install @rainyjune/antd-components
 ```
 
-## Start your site
+## Import it in your app
 
-Run the development server:
+```typescript
+import { PicturesWall } from '@rainyjune/antd-components';
 
-```shell
-cd my-website
-
-npx docusaurus start
+function App(props: any) {
+  return (
+    <PicturesWall
+      upload={{
+        action: "https://api.cloudinary.com/v1_1/demo/upload",
+        data: {
+          upload_preset: "doc_codepen_example",
+          tags: "browser_upload",
+        },
+      }}
+    />
+  );
+}
 ```
-
-Your site starts at `http://localhost:3000`.
-
-Open `docs/intro.md` and edit some lines: the site **reloads automatically** and display your changes.
